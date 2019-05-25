@@ -1,3 +1,7 @@
+'''
+Vinicius Santos da Silva
+RA:21805057
+'''
 from flask import *
 from random import *
 from flaskext.mysql import MySQL
