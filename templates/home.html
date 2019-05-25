@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pagina inicial</title>
+    <style>
+         #blocklog{
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        #corpo{
+            margin-top: 100px;
+        }
+    </style>
+</head>
+<header>
+    <form id="blocklog" method="post" action="/url">
+        <h1>Encurtador de projeto</h1>
+        <h2>Cadastrar projeto</h2>
+        <label>Sua url:</label><input type="text" value="{{rand}}" name="url"><br><br><br>
+        <input type="text" placeholder="Nome do projeto" name="nomep"><br><br>
+        <input type="text" placeholder="Data do projeto" name="datap"><br><br>
+        <input type="text" placeholder="Descrição" name="desc"><br><br>
+        <input type="submit" name="loginbt" value="Cadastrar projeto" formaction="/{{rand}}">
+
+    </form>
+</header>
+<body>
+    <div id="corpo">
+
+        <table border="1">
+            <tr>
+                <td>URL</td>
+                <td>Nome do projeto</td>
+                <td>Data do projeto</td>
+                <td>Descrição</td>
+                <td>Numero de Acessos (Via link encurtado)</td>
+
+            </tr>
+            {% for dado in dados %}
+            <tr>
+                <td>{{dado[4]}}</td>
+                <td>{{dado[1]}}</td>
+                <td>{{dado[2]}}</td>
+                <td>{{dado[3]}}</td>
+                <td>{{dado[5]}}</td>
+            </tr>
+            {% endfor %}
+
+        </table>
+    </div>
+</body>
+</html>
